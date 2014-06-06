@@ -143,28 +143,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/scripts\/min\/functions-ck.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/scripts\/min\/functions-ck.js",
-		"outputAbbreviatedPath": "\/library\/scripts\/min\/min\/functions-ck-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/scripts\/min\/timeline-divs-ck.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/scripts\/min\/timeline-divs-ck.js",
-		"outputAbbreviatedPath": "\/library\/scripts\/min\/min\/timeline-divs-ck-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/library\/scripts\/min\/timeline-divs-new-ck.js": {
 		"fileType": 64,
 		"ignore": 1,
