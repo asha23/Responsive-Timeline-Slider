@@ -1,109 +1,22 @@
-<?php
-/*
-	Template Name: History
-*/
-get_header();
-?>
-
-
-		<div class="contentBox sideBar headerBox">
-			<?php dynamic_sidebar('Left'); ?>
+<section id="content">						
+	<div class="date-caption">
+		<div id="timeline">
+		
+		<div id="dates">
+			<div><a href="#1">title</a></div>
 		</div>
-		
-		</div><!-- .fourCol -->
-		
-		<div class="eightCol lastCol">
-		
-			<section id="content">
-				
-				<?php if (is_active_sidebar('Top')) : ?>
-					<section id="top">
-						<?php dynamic_sidebar('Top'); ?>
-					</section>
-				<?php endif; ?>
-		
-				<?php while ( have_posts() ) : the_post(); ?>
-					<h2><?php the_title(); ?></h2>					
-					<?php the_content(); ?>
-				
-				<?php
-				
-				$events = array(); $i = 0;
-				$events_query = new WP_Query(array( 'post_type' => 'history-event', 'posts_per_page' => -1 ));
-				if($events_query->have_posts()) {
-					while($events_query->have_posts()) {
-						$events_query->the_post();
-						$events[$i]->title = get_the_title();
-						$events[$i]->description = get_the_content();
-						$img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'history-thumb');
-						if ($img) {
-						    $events[$i]->thumbnail = esc_attr($img[0]);
-						}	
-						$i++;
-					}
-				}
-				wp_reset_postdata();
-				
-				?>
-							
-					<div class="date-caption">
-				    <div id="timeline">
-				       
-				        <div id="dates">
-				            <?php
-				            $i = 1;
-				            foreach($events as $event) {
-				            	?>
-				            	<div><a href="#<?php echo $i; ?>"><?php echo $event->title; ?></a></div>
-				            	<?php
-				            	$i++;
-				            }
-				            ?>
-				        </div>
-				        <div id="issues">
-				        	<?php
-				            $i = 1;
-				            foreach($events as $event) {
-				            	?>
-				            	<div id="<?php echo $i; ?>" class="historyEntry">
-					        	    <img src="<?php echo $event->thumbnail; ?>" class="timelineImage">
-									<h2><?php echo $event->title; ?></h2>
-									<p><?php echo $event->description; ?></p>
-				            	</div>
-				            	<?php
-				            	$i++;
-				            }
-				            ?>
-				        </div>
-				        <div id="grad_left"></div>
-				        <div id="grad_right"></div>
-				    </div>
-				</div>					
-
-					
-				<?php endwhile; ?>
-	
-				<?php if (is_active_sidebar('Bottom')) : ?>
-					<section id="bottom">
-						<?php dynamic_sidebar('Bottom'); ?>
-					</section>
-				<?php endif; ?>
-		
-			</section> <!-- #content -->
-	
-		<?php if (is_active_sidebar('Right')) : ?>
-			<section id="right">
-				<?php dynamic_sidebar('Right'); ?>
-			</section>
-		<?php endif; ?>
-		
-		</div><!-- .eightCol -->
-		
-	</div><!-- .wrapper -->
-		
-
-<?php get_footer(); ?>
-
+		<div id="issues">
+			<div id="1" class="historyEntry">
+				<img src="image" class="timelineImage">
+				<h2>Title</h2>
+				<p>Description</p>
+			</div>
+		</div>
+		<div id="grad_left"></div>
+		<div id="grad_right"></div>
+	</div>
+</div>					
+			
 <script type="text/javascript">
 				
 $( document ).ready(function() {
@@ -211,6 +124,4 @@ $( document ).ready(function() {
 	
 	
 });
-
-
 </script>
