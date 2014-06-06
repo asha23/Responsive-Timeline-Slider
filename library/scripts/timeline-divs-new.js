@@ -1,10 +1,6 @@
 /* ----------------------------------
 jQuery timeline version 1.2
 Author: Ash Whiting
-
-A heavily stripped-down version of Jquery Timelinr
-http://www.csslab.cl/2011/08/18/jquery-timelinr/
-
 ---------------------------------- */
 
 jQuery.fn.timeline = function(options){
@@ -20,7 +16,7 @@ jQuery.fn.timeline = function(options){
 		slideSpeed:                          'medium',			
 		slideTransparency:                   0.2,				
 		slideTransparencySpeed:              500,				
-		startAt:                             1,
+		startAt:                             1
 	}, options);
 
 	$(function(){
