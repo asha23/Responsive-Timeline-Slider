@@ -29,4 +29,24 @@ Initialise by using the following
 
 ~~~
 
-See the page-template.php file for markup formatting.
+Example markup 
+
+~~~
+<section id="content">						
+	<div class="date-caption">
+		<div id="timeline">
+		<div id="dates">
+			<div><a href="#1">title</a></div>
+		</div>
+		<div id="issues">
+			<div id="1" class="historyEntry">
+				<img src="image" class="timelineImage">
+				<h2>Title</h2>
+				<p>Description</p>
+			</div>
+		</div>
+		<div id="grad_left"></div>
+		<div id="grad_right"></div>
+	</div>
+</div>	
+~~~
