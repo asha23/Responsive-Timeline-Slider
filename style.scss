@@ -58,9 +58,6 @@ $brand-font-family-sec: Helvetica, Arial;
 					margin:auto auto;
 				}
 				h2 {
-					color: #F5D962;
-					font-size: 3em;
-					text-shadow: 2px 2px 0 #000;
 					padding-bottom:20px;
 					border-bottom: 2px solid #690C0F;
 					text-align: center;
@@ -127,14 +124,6 @@ $brand-font-family-sec: Helvetica, Arial;
 }
 
 
-
-
-
-
-
-
-
-
 @media only screen
 and (max-width : 380px) {	
 	#issues div img {width: 180px; height: 116px;}
@@ -180,10 +169,6 @@ and (max-width : 320px) {
 	}
 
 }
-
-
-
-
 
 //// EXTRA HISTORY MEDIA QUERIES
 
