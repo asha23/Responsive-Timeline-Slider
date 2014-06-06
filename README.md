@@ -50,3 +50,8 @@ Example markup
 	</div>
 </div>	
 ~~~
+
+Notes
+=====
+
+Essentially, this is a two tier image scroller. It auto resizes on screen change, And has some markup for mobile devices. There is some basic SASS included.
