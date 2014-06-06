@@ -35,10 +35,16 @@ Example markup
 		<div id="timeline">
 		
 			<div id="dates">
-				<div><a href="#1">title</a></div>
+				<div><a href="#1">Feb 17th 1942</a></div>
+				<div><a href="#2">March 18th 1951</a></div>
 			</div>
 			<div id="issues">
 				<div id="1" class="historyEntry">
+					<img src="image" class="timelineImage">
+					<h2>Title</h2>
+					<p>Description</p>
+				</div>
+				<div id="2" class="historyEntry">
 					<img src="image" class="timelineImage">
 					<h2>Title</h2>
 					<p>Description</p>
@@ -49,7 +55,7 @@ Example markup
 			<div id="grad_right"></div>
 		</div>
 	</div>
-</div>						
+</div>											
 ~~~
 
 Notes
