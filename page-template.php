@@ -34,7 +34,7 @@ $( document ).ready(function() {
 	
 	// Make these variables globals
 
-	var device = "";
+	var device = false;
 	var windowType = "";
 	var isTablet = false;
 	// timeline initialisation event
@@ -74,7 +74,7 @@ $( document ).ready(function() {
 		
 	// Are we a mobile device?
 	
-	if (device == "iPhone" || device == "BlackBerry" || device == "Windows" || device == "Opera" || device == "Android" || device == "iPad") {
+	if (device != false) {
 		var mobileDevice = true;
 	}
 	
