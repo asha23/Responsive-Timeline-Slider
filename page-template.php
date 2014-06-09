@@ -37,7 +37,8 @@ $( document ).ready(function() {
 	var device = false;
 	var windowType = "";
 	var isTablet = false;
-	// timeline initialisation event
+	
+	// timeline initialisation event - boom
 	
 	function launchTimeline() {
         $().timeline();
