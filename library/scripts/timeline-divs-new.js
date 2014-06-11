@@ -72,14 +72,14 @@ jQuery.fn.timeline = function(options){
 	// Client side 
 	// ******************************************************************************
 	
-	// Grab the current window size so we know what it is
-	var  windowSize = $(window).width();
-	
-	// Make these variables globals
+	// Make these variables an obj
 
-	var device = false;
-	var windowType = "";
-	var isTablet = false;
+	var global = {
+		windowSize:     $(window).width(),
+		device:         false,
+		windowType:     "",
+		isTablet:       false
+	};
 	
 	// timeline initialisation event - boom
 	
@@ -111,41 +111,41 @@ jQuery.fn.timeline = function(options){
 				return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.iPad() || isMobile.Opera() || isMobile.Windows());
 			}
 		};      
-		device = isMobile.any();
+		global.device = isMobile.any();
 	}
 						
 	isDeviceMobile();
 		
 	// Are we a mobile device?
 	
-	if (device != false) {
+	if (global.device) {
 		var mobileDevice = true;
 	}
 	
 	// If not, initialise the timeline
 	
-	if (mobileDevice != true) {
+	if (!global.device) {
 		launchTimeline();
 	}
 	
 	// Check for tablet if it's Android/Blackberry... A tad hacky this, but it works
 	
 	function checkDeviceType () {
-		if (windowSize <= 1024 && windowSize >= 769 && device=="Android" || windowSize <= 1024 && windowSize >= 601 && device=="Blackberry") {
+		if (global.windowSize <= 1024 && global.windowSize >= 769 && global.device=="Android" || global.windowSize <= 1024 && global.windowSize >= 601 && global.device=="Blackberry") {
 		
-			windowType = "tablet-landscape"; // just for reference
-			isTablet = true;
+			global.windowType = "tablet-landscape"; // just for reference
+			global.isTablet = true;
 			
-		} else if (windowSize <= 768 && device=="Android" || windowSize <= 600 && device=="Blackberry") {
+		} else if (global.windowSize <= 768 && global.device=="Android" || global.windowSize <= 600 && global.device=="Blackberry") {
 		
-			windowType = "tablet-portrait"; // just for reference
-			isTablet = true;
+			global.windowType = "tablet-portrait"; // just for reference
+			global.isTablet = true;
 		}
 	}
 	
 	// If I'm a tablet then launch the timeline
 	
-	if (device == "iPad" || isTablet == true) {
+	if (global.device === "iPad" || global.isTablet) {
 		launchTimeline();
 	}
 	
@@ -154,7 +154,7 @@ jQuery.fn.timeline = function(options){
 	$( window ).on( "orientationchange", function( event ) {
 	    windowSize = $(window).width();
 	    checkDeviceType();
-	    if (isTablet == true || device == "iPad") {
+	    if (global.isTablet || global.device === "iPad") {
 			launchTimeline();
 		}
 	});
@@ -167,7 +167,7 @@ jQuery.fn.timeline = function(options){
 	        clearTimeout(window.resizeEvt);
 	        window.resizeEvt = setTimeout(function(){
 	        	// Exclude mobile devices.
-		        if(mobileDevice != true) {
+		        if(!global.device) {
 					launchTimeline();
 				}
 	        }, 100);
